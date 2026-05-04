@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "./variables" as *;
 
 @mixin tablet {
@@ -24,11 +25,11 @@
 
 @mixin button-states($color: $color-primary) {
     &:hover {
-        background: darken($color, 10%);
+        background: color.adjust($color, $lightness: -10%);
     }
 
     &:active {
-        background: darken($color, 20%);
+        background: color.adjust($color, $lightness: -20%);
     }
 
     &:focus-visible {
