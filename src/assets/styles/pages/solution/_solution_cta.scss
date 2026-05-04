@@ -5,7 +5,7 @@
     width: 64rem;
     height: 54rem;
     overflow: hidden;
-    border-radius: 0.8rem;
+    border-radius: $radius-md;
 
     &__image {
         position: absolute;
@@ -13,14 +13,14 @@
         background-color: var(--c-bg);
         background-position: center;
         background-size: cover;
-        border-radius: 0.8rem;
+        border-radius: $radius-md;
     }
 
     &__overlay {
         position: absolute;
         inset: 0;
         background: rgb(0 0 0 / 40%);
-        border-radius: 0.8rem;
+        border-radius: $radius-md;
     }
 
     &__content {
@@ -32,60 +32,48 @@
         justify-content: flex-end;
         height: 100%;
         padding: 4.8rem;
-        color: #fff;
+        color: $color-white;
 
         &__title {
             margin: 0;
-            font-family: "Wix Madefor Display", sans-serif;
+            font-family: $font-display;
             font-size: 3.5rem;
-            font-weight: 800;
+            font-weight: $weight-extrabold;
             line-height: 1.2;
             overflow-wrap: anywhere;
         }
 
         &__description {
             margin: 0;
-            font-family: "DM Sans", sans-serif;
-            font-size: 1.6rem;
-            font-weight: 400;
+            font-family: $font-body;
+            font-size: $size-body;
+            font-weight: $weight-regular;
             line-height: 1.6;
             overflow-wrap: anywhere;
 
             strong {
-                font-weight: 800;
+                font-weight: $weight-extrabold;
             }
         }
 
         &__button {
-            display: flex;
-            gap: 0.8rem;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1.6rem 2rem;
-            color: #fff;
+            @include flex-between;
+
+            gap: $spacing-sm;
+            padding: $spacing-md 2rem;
+            color: $color-white;
             cursor: pointer;
-            background: #dd1969;
+            background: $color-primary;
             border: none;
-            border-radius: 0.4rem;
-            transition: background 0.2s ease;
+            border-radius: $radius-sm;
 
-            &:hover {
-                background: #c01559;
-            }
-
-            &:active {
-                background: #a01249;
-            }
-
-            &:focus-visible {
-                outline: 0.2rem solid #1d5eff;
-                outline-offset: 0.2rem;
-            }
+            @include smooth-transition(background);
+            @include button-states;
 
             .sc-text {
-                font-family: "Wix Madefor Display", sans-serif;
-                font-size: 1.6rem;
-                font-weight: 700;
+                font-family: $font-display;
+                font-size: $size-body;
+                font-weight: $weight-bold;
                 white-space: nowrap;
             }
 
@@ -98,16 +86,16 @@
     }
 }
 
-@media (width <= 768px) {
+@include tablet {
     .c-solution-cta {
         height: 42rem;
 
         &__content {
-            padding: 3.2rem;
             gap: 1.8rem;
+            padding: 3.2rem;
 
             &__title {
-                font-size: 2.8rem;
+                font-size: $size-title-md;
             }
 
             &__description {
@@ -118,19 +106,19 @@
     }
 }
 
-@media (width <= 375px) {
+@include small {
     .c-solution-cta {
         height: 36rem;
-        border-radius: 0.4rem;
+        border-radius: $radius-sm;
 
         &__image,
         &__overlay {
-            border-radius: 0.4rem;
+            border-radius: $radius-sm;
         }
 
         &__content {
-            padding: 2rem 1.6rem;
             gap: 1.4rem;
+            padding: 2rem $spacing-md;
 
             &__title {
                 font-size: 2.2rem;
@@ -143,12 +131,12 @@
             }
 
             &__button {
-                width: 100%;
                 justify-content: center;
+                width: 100%;
                 padding: 1.2rem 1.4rem;
 
                 .sc-text {
-                    font-size: 1.4rem;
+                    font-size: $size-body-sm;
                 }
 
                 .sc-icon {

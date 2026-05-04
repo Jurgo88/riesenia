@@ -9,16 +9,16 @@
 
 .c-empty-state {
     display: grid;
-    gap: 0.8rem;
+    gap: $spacing-sm;
     padding: 2.4rem;
-    background: #fff;
+    background: $color-white;
     border: 0.1rem dashed #c8ccdd;
-    border-radius: 0.8rem;
+    border-radius: $radius-md;
 
     &__title {
         margin: 0;
-        font-family: "Wix Madefor Display", sans-serif;
-        font-size: 2rem;
+        font-family: $font-display;
+        font-size: $size-title-sm;
         line-height: 1.25;
         color: #1d1e26;
         overflow-wrap: anywhere;
@@ -26,7 +26,7 @@
 
     &__message {
         margin: 0;
-        font-family: "DM Sans", sans-serif;
+        font-family: $font-body;
         font-size: 1.5rem;
         line-height: 1.45;
         color: #4f5260;
@@ -38,34 +38,34 @@
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    padding: 1.6rem;
-    background: #fff;
+    padding: $spacing-md;
+    background: $color-white;
     border: 0.1rem solid #e9e9ef;
-    border-radius: 0.8rem;
-    box-shadow: 0 0.4rem 1.2rem rgb(19 25 48 / 8%);
+    border-radius: $radius-md;
+    box-shadow: 0 $spacing-xs 1.2rem rgb(19 25 48 / 8%);
 
     &__badges {
         display: flex;
-        gap: 0.8rem;
+        gap: $spacing-sm;
         align-items: center;
         min-height: 2.6rem;
     }
 
     &__badge {
-        padding: 0.5rem 0.8rem;
-        font-family: "DM Sans", sans-serif;
-        font-size: 1.2rem;
-        font-weight: 700;
+        padding: 0.5rem $spacing-sm;
+        font-family: $font-body;
+        font-size: $size-body-xs;
+        font-weight: $weight-bold;
         line-height: 1;
-        border-radius: 0.4rem;
+        border-radius: $radius-sm;
 
         &.is-discount {
-            color: #fff;
+            color: $color-white;
             background: #7d2f78;
         }
 
         &.is-new {
-            color: #fff;
+            color: $color-white;
             background: #149721;
         }
 
@@ -76,19 +76,18 @@
     }
 
     &__image-wrap {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-center;
+
         height: 18.8rem;
-        padding: 0.8rem;
+        padding: $spacing-sm;
     }
 
     &__image {
         display: block;
         width: 100%;
         max-width: 100%;
-        max-height: 100%;
         height: auto;
+        max-height: 100%;
         object-fit: contain;
     }
 
@@ -99,24 +98,24 @@
         height: 100%;
         min-height: 16rem;
         padding: 1.2rem;
-        font-family: "DM Sans", sans-serif;
-        font-size: 1.4rem;
+        font-family: $font-body;
+        font-size: $size-body-sm;
         line-height: 1.3;
         color: #6e7182;
         text-align: center;
         background: #f4f5fa;
         border: 0.1rem dashed #d6d9e7;
-        border-radius: 0.4rem;
+        border-radius: $radius-sm;
     }
 
     &__rating {
         display: flex;
-        gap: 0.4rem;
+        gap: $spacing-xs;
         align-items: center;
     }
 
     &__star {
-        font-size: 1.4rem;
+        font-size: $size-body-sm;
         line-height: 1;
         color: #d3d6e0;
 
@@ -127,16 +126,16 @@
 
     &__reviews {
         margin-left: 0.2rem;
-        font-family: "DM Sans", sans-serif;
-        font-size: 1.2rem;
+        font-family: $font-body;
+        font-size: $size-body-xs;
         color: #6e7182;
     }
 
     &__title {
         margin: 0;
-        font-family: "Wix Madefor Display", sans-serif;
-        font-size: 2rem;
-        font-weight: 700;
+        font-family: $font-display;
+        font-size: $size-title-sm;
+        font-weight: $weight-bold;
         line-height: 1.3;
         color: #1d1e26;
         overflow-wrap: anywhere;
@@ -144,36 +143,36 @@
 
     &__prices {
         display: grid;
-        gap: 0.4rem;
+        gap: $spacing-xs;
     }
 
     &__price {
-        font-family: "DM Sans", sans-serif;
+        font-family: $font-body;
 
         &--original {
-            font-size: 1.4rem;
+            font-size: $size-body-sm;
             color: #86899a;
             text-decoration: line-through;
         }
 
         &--sale {
             font-size: 2.2rem;
-            font-weight: 700;
+            font-weight: $weight-bold;
             line-height: 1.2;
-            color: #dd1969;
+            color: $color-primary;
         }
     }
 
     &__price-without-vat {
-        font-family: "DM Sans", sans-serif;
+        font-family: $font-body;
         font-size: 1.3rem;
         color: #4f5260;
     }
 
     &__stock {
-        font-family: "DM Sans", sans-serif;
+        font-family: $font-body;
         font-size: 1.3rem;
-        font-weight: 500;
+        font-weight: $weight-medium;
         color: #109968;
         text-decoration: underline;
         overflow-wrap: anywhere;
@@ -181,94 +180,79 @@
 
     &__actions {
         display: flex;
-        gap: 0.8rem;
+        gap: $spacing-sm;
         align-items: center;
         margin-top: auto;
     }
 
     &__quantity {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flex-between;
+
         width: 10rem;
         height: 4.2rem;
-        padding: 0 0.8rem;
-        border-radius: 0.4rem;
+        padding: 0 $spacing-sm;
+        border-radius: $radius-sm;
     }
 
     &__qty-btn {
         width: 2.6rem;
         height: 2.6rem;
         padding: 0;
-        font-family: "DM Sans", sans-serif;
+        font-family: $font-body;
         font-size: 1.8rem;
         line-height: 1;
         color: #2d2e35;
         cursor: pointer;
-        background: #fff;
+        background: $color-white;
         border: none;
-        border-radius: 0.4rem;
+        border-radius: $radius-sm;
 
-        &:focus-visible {
-            outline: 0.2rem solid #1d5eff;
-            outline-offset: 0.2rem;
-        }
+        @include focus-ring;
     }
 
     &__qty-value {
         min-width: 2rem;
-        padding: 0.8rem 1.4rem;
-        font-family: "DM Sans", sans-serif;
+        padding: $spacing-sm 1.4rem;
+        font-family: $font-body;
         font-size: 1.5rem;
-        font-weight: 700;
+        font-weight: $weight-bold;
         color: #1d1e26;
         text-align: center;
         border: 0.1rem solid #d5d7e3;
-        border-radius: 0.4rem;
+        border-radius: $radius-sm;
     }
 
     &__add-to-cart {
         display: inline-flex;
+        flex: 1;
         gap: 1.2rem;
         align-items: center;
         justify-content: center;
-        flex: 1;
         height: 4.2rem;
-        font-family: "Wix Madefor Display", sans-serif;
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: #fff;
+        font-family: $font-display;
+        font-size: $size-body-sm;
+        font-weight: $weight-bold;
+        color: $color-white;
         letter-spacing: 0.02em;
         cursor: pointer;
-        background: #dd1969;
+        background: $color-primary;
         border: none;
-        border-radius: 0.4rem;
-        transition: background 0.2s ease;
+        border-radius: $radius-sm;
 
-        &:hover {
-            background: #c01559;
-        }
-
-        &:active {
-            background: #a01249;
-        }
-
-        &:focus-visible {
-            outline: 0.2rem solid #1d5eff;
-            outline-offset: 0.2rem;
-        }
+        @include smooth-transition(background);
+        @include button-states;
     }
 
     &__add-to-cart-icon {
+        flex: 0 0 auto;
         width: 2rem;
         height: 2rem;
-        flex: 0 0 auto;
     }
 }
 
 .c-cart-notifications {
     position: fixed;
-    top: 9.6rem;
+    top: $spacing-2xl;
     right: 2.4rem;
     z-index: 20;
     width: min(36rem, calc(100vw - 3.2rem));
@@ -282,7 +266,7 @@
     background: rgb(255 255 255 / 94%);
     backdrop-filter: blur(1.2rem);
     border: 0.1rem solid #e4e6ef;
-    border-radius: 1.2rem;
+    border-radius: $radius-lg;
     box-shadow: 0 2rem 4rem rgb(19 25 48 / 14%);
     animation: cart-notification-in 0.22s ease-out;
 
@@ -309,8 +293,8 @@
     &.is-leaving {
         opacity: 0;
         transition:
-            opacity 0.2s ease,
-            transform 0.2s ease;
+            opacity $transition-base,
+            transform $transition-base;
         transform: translateY(-0.8rem);
     }
 
@@ -320,20 +304,20 @@
 
     &__body {
         display: grid;
-        gap: 0.4rem;
-        padding: 1.5rem 1.6rem 1.5rem 0.2rem;
+        gap: $spacing-xs;
+        padding: 1.5rem $spacing-md 1.5rem 0.2rem;
     }
 
     &__label {
-        font-family: "Wix Madefor Display", sans-serif;
+        font-family: $font-display;
         font-size: 1.5rem;
-        font-weight: 700;
+        font-weight: $weight-bold;
         line-height: 1.2;
     }
 
     &__message {
-        font-family: "DM Sans", sans-serif;
-        font-size: 1.4rem;
+        font-family: $font-body;
+        font-size: $size-body-sm;
         line-height: 1.5;
         color: #353847;
     }
@@ -357,20 +341,20 @@
     }
 }
 
-@media (width <= 768px) {
+@include tablet {
     .c-solution-products {
         grid-template-columns: 1fr;
     }
 
     .c-cart-notifications {
         top: 8rem;
-        right: 1.6rem;
-        left: 1.6rem;
+        right: $spacing-md;
+        left: $spacing-md;
         width: auto;
     }
 }
 
-@media (width <= 375px) {
+@include small {
     .c-solution-product {
         gap: 1rem;
         padding: 1.2rem;
@@ -389,14 +373,14 @@
             }
 
             &--sale {
-                font-size: 2rem;
+                font-size: $size-title-sm;
             }
         }
 
         &__price-without-vat,
         &__stock,
         &__reviews {
-            font-size: 1.2rem;
+            font-size: $size-body-xs;
         }
 
         &__actions {
@@ -407,7 +391,7 @@
         &__quantity {
             width: 10rem;
             height: 4.2rem;
-            padding: 0 0.8rem;
+            padding: 0 $spacing-sm;
         }
 
         &__qty-value {
@@ -416,7 +400,7 @@
 
         &__add-to-cart {
             width: auto;
-            font-size: 1.4rem;
+            font-size: $size-body-sm;
         }
     }
 
@@ -432,7 +416,7 @@
         }
 
         &__label {
-            font-size: 1.4rem;
+            font-size: $size-body-sm;
         }
 
         &__message {

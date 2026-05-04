@@ -1,1 +1,122 @@
 @use "./variables" as *;
+
+@mixin tablet {
+    @media (width <= $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (width <= $breakpoint-mobile) {
+        @content;
+    }
+}
+
+@mixin small {
+    @media (width <= $breakpoint-small) {
+        @content;
+    }
+}
+
+// ============================================================================
+// BUTTON & INTERACTION MIXINS
+// ============================================================================
+
+@mixin button-states($color: $color-primary) {
+    &:hover {
+        background: darken($color, 10%);
+    }
+
+    &:active {
+        background: darken($color, 20%);
+    }
+
+    &:focus-visible {
+        outline: 0.2rem solid #1d5eff;
+        outline-offset: 0.2rem;
+    }
+}
+
+@mixin focus-ring($color: #1d5eff) {
+    &:focus-visible {
+        outline: 0.2rem solid $color;
+        outline-offset: 0.2rem;
+    }
+}
+
+// ============================================================================
+// TEXT & TYPOGRAPHY MIXINS
+// ============================================================================
+
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin text-clamp($lines: 2) {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+}
+
+@mixin text-smooth {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// ============================================================================
+// LAYOUT & FLEX MIXINS
+// ============================================================================
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// ============================================================================
+// SPACING MIXINS
+// ============================================================================
+
+@mixin padding-all($size) {
+    padding: $size;
+}
+
+@mixin margin-all($size) {
+    margin: $size;
+}
+
+// ============================================================================
+// UTILITY MIXINS
+// ============================================================================
+
+@mixin smooth-transition($properties: all) {
+    transition: $properties $transition-base;
+}
+
+@mixin no-select {
+    user-select: none;
+}
+
+@mixin clearfix {
+    &::after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+}

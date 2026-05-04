@@ -36,22 +36,21 @@ body.is-modal-open {
 }
 
 .c-secret-offer-modal {
+    @include flex-center;
+
     position: fixed;
     inset: 0;
     z-index: 200;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.6rem;
-    opacity: 0;
+    padding: $spacing-md;
     visibility: hidden;
+    opacity: 0;
     transition:
         opacity 0.22s ease,
         visibility 0.22s ease;
 
     &.is-open {
-        opacity: 1;
         visibility: visible;
+        opacity: 1;
 
         .c-secret-offer-modal__dialog {
             transform: translateY(0) scale(1);
@@ -69,14 +68,14 @@ body.is-modal-open {
         position: relative;
         width: min(56rem, 100%);
         max-height: calc(100vh - 3.2rem);
-        padding: 3.2rem;
+        padding: $spacing-lg;
         overflow: auto;
-        background: linear-gradient(180deg, #fff 0%, #fff8fb 100%);
+        background: linear-gradient(180deg, $color-white 0%, #fff8fb 100%);
         border: 0.1rem solid #f0d5e2;
-        border-radius: 0.4rem;
+        border-radius: $radius-sm;
         box-shadow: 0 2.2rem 5rem rgb(14 10 24 / 25%);
-        transform: translateY(1.8rem) scale(0.98);
         transition: transform 0.24s ease;
+        transform: translateY(1.8rem) scale(0.98);
     }
 
     &__close {
@@ -89,17 +88,14 @@ body.is-modal-open {
         font-size: 4.2rem;
         color: #3e2f3a;
         cursor: pointer;
-        background: #ffffff;
+        background: $color-white;
         border: none;
-    }
 
-    &__close:hover {
-        color: #dd1969;
-    }
+        &:hover {
+            color: $color-primary;
+        }
 
-    &__close:focus-visible {
-        outline: 0.2rem solid #1d5eff;
-        outline-offset: 0.2rem;
+        @include focus-ring;
     }
 
     &__header {
@@ -110,9 +106,9 @@ body.is-modal-open {
 
     &__title {
         margin: 0;
-        font-family: "Wix Madefor Display", sans-serif;
-        font-size: 2.8rem;
-        font-weight: 700;
+        font-family: $font-display;
+        font-size: $size-title-md;
+        font-weight: $weight-bold;
         line-height: 1.15;
         color: #1f1f2c;
     }
@@ -122,10 +118,10 @@ body.is-modal-open {
         top: 4.4rem;
         right: 0;
         margin: 0;
-        font-family: "DM Sans", sans-serif;
+        font-family: $font-body;
         font-size: 1.3rem;
         line-height: 1.35;
-        color: #dd1969;
+        color: $color-primary;
         text-align: right;
     }
 
@@ -144,14 +140,14 @@ body.is-modal-open {
     &__field {
         display: grid;
         gap: 0.6rem;
-        font-family: "DM Sans", sans-serif;
-        font-size: 1.4rem;
-        font-weight: 500;
+        font-family: $font-body;
+        font-size: $size-body-sm;
+        font-weight: $weight-medium;
         color: #2e3242;
 
         .c-secret-offer-modal__required {
-            color: #dd1969;
-            font-weight: 700;
+            font-weight: $weight-bold;
+            color: $color-primary;
         }
 
         input,
@@ -159,33 +155,30 @@ body.is-modal-open {
             width: 100%;
             height: 4.8rem;
             padding: 0 1.4rem;
-            font-family: "DM Sans", sans-serif;
+            font-family: $font-body;
             font-size: 1.5rem;
             color: #222436;
-            background: #fff;
+            background: $color-white;
             border: 0.1rem solid #d6d9e7;
-            border-radius: 0.4rem;
+            border-radius: $radius-sm;
             outline: none;
-            transition: border-color 0.2s ease;
+            transition: border-color $transition-base;
 
             &:focus {
-                border-color: #dd1969;
+                border-color: $color-primary;
             }
 
-            &:focus-visible {
-                outline: 0.2rem solid #1d5eff;
-                outline-offset: 0.1rem;
-            }
+            @include focus-ring;
 
             &.is-invalid {
-                border-color: #d7194b;
                 background: #fff5f8;
+                border-color: #d7194b;
             }
         }
 
         select {
-            appearance: none;
             padding-right: 4rem;
+            appearance: none;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23dd1969' d='M1.41 0.59L6 5.17L10.59 0.59L12 2L6 8L0 2z'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 1.8rem center;
@@ -199,9 +192,9 @@ body.is-modal-open {
 
     &__error {
         min-height: 1.8rem;
-        font-family: "DM Sans", sans-serif;
-        font-size: 1.2rem;
-        font-weight: 700;
+        font-family: $font-body;
+        font-size: $size-body-xs;
+        font-weight: $weight-bold;
         line-height: 1.4;
         color: #d7194b;
     }
@@ -209,64 +202,58 @@ body.is-modal-open {
     &__submit {
         display: inline-flex;
         flex-shrink: 0;
-        gap: 0.8rem;
+        gap: $spacing-sm;
         align-items: center;
         justify-content: center;
-        height: 4.8rem;
         min-width: 20rem;
-        margin-top: 0.4rem;
+        height: 4.8rem;
         padding: 0 1.8rem;
-        font-family: "Wix Madefor Display", sans-serif;
+        margin-top: $spacing-xs;
+        font-family: $font-display;
         font-size: 1.5rem;
-        font-weight: 700;
+        font-weight: $weight-bold;
         line-height: 1;
-        color: #fff;
+        color: $color-white;
         white-space: nowrap;
         cursor: pointer;
-        background: #dd1969;
+        background: $color-primary;
         border: none;
-        border-radius: 0.4rem;
+        border-radius: $radius-sm;
 
         &:disabled {
             cursor: not-allowed;
             opacity: 0.6;
         }
 
-        &:focus-visible {
-            outline: 0.2rem solid #1d5eff;
-            outline-offset: 0.2rem;
-        }
+        @include focus-ring;
     }
 
     &__submit-icon {
+        flex-shrink: 0;
         width: 2rem;
         height: 2rem;
-        flex-shrink: 0;
     }
 
     &__terms {
-        font-family: "DM Sans", sans-serif;
+        font-family: $font-body;
         font-size: 1.3rem;
-        font-weight: 500;
+        font-weight: $weight-medium;
         line-height: 1.4;
-        color: #dd1969;
+        color: $color-primary;
         text-decoration: underline;
         text-underline-offset: 0.24rem;
         white-space: normal;
 
-        &:focus-visible {
-            outline: 0.2rem solid #1d5eff;
-            outline-offset: 0.2rem;
-        }
+        @include focus-ring;
     }
 
     &__terms-copy {
-        margin: 0;
         flex: 1;
         min-width: 0;
-        font-family: "DM Sans", sans-serif;
+        margin: 0;
+        font-family: $font-body;
         font-size: 1.3rem;
-        font-weight: 500;
+        font-weight: $weight-medium;
         line-height: 1.4;
         color: #525872;
         text-align: right;
@@ -274,11 +261,10 @@ body.is-modal-open {
     }
 
     &__actions-row {
-        display: flex;
+        @include flex-between;
+
         flex-wrap: nowrap;
         gap: 1.2rem;
-        align-items: center;
-        justify-content: space-between;
     }
 
     &__success {
@@ -294,19 +280,19 @@ body.is-modal-open {
         place-items: center;
         width: 6.4rem;
         height: 6.4rem;
-        font-family: "Wix Madefor Display", sans-serif;
+        font-family: $font-display;
         font-size: 3rem;
-        font-weight: 700;
-        color: #fff;
+        font-weight: $weight-bold;
+        color: $color-white;
         background: linear-gradient(180deg, #1eb980 0%, #109968 100%);
         border-radius: 50%;
     }
 
     &__success-title {
         margin: 0;
-        font-family: "Wix Madefor Display", sans-serif;
+        font-family: $font-display;
         font-size: 2.6rem;
-        font-weight: 700;
+        font-weight: $weight-bold;
         line-height: 1.2;
         color: #1f1f2c;
     }
@@ -314,7 +300,7 @@ body.is-modal-open {
     &__success-text {
         max-width: 38rem;
         margin: 0;
-        font-family: "DM Sans", sans-serif;
+        font-family: $font-body;
         font-size: 1.5rem;
         line-height: 1.6;
         color: #4d4f5e;
@@ -324,28 +310,25 @@ body.is-modal-open {
         min-width: 16rem;
         height: 4.6rem;
         padding: 0 2rem;
-        font-family: "Wix Madefor Display", sans-serif;
+        font-family: $font-display;
         font-size: 1.5rem;
-        font-weight: 700;
-        color: #fff;
+        font-weight: $weight-bold;
+        color: $color-white;
         cursor: pointer;
-        background: #dd1969;
+        background: $color-primary;
         border: none;
-        border-radius: 0.4rem;
+        border-radius: $radius-sm;
 
-        &:focus-visible {
-            outline: 0.2rem solid #1d5eff;
-            outline-offset: 0.2rem;
-        }
+        @include focus-ring;
     }
 }
 
-@media (width <= 600px) {
+@include mobile {
     .c-secret-offer-modal {
         padding: 1rem;
 
         &__dialog {
-            padding: 2.4rem 1.6rem 2rem;
+            padding: 2.4rem $spacing-md 2rem;
             border-radius: 1rem;
         }
 
@@ -360,40 +343,40 @@ body.is-modal-open {
 
         &__subtitle {
             top: 3.8rem;
-            font-size: 1.2rem;
+            font-size: $size-body-xs;
             text-align: right;
         }
 
         &__row {
             grid-template-columns: 1fr;
-            gap: 0.8rem;
+            gap: $spacing-sm;
         }
 
         &__actions-row {
-            gap: 0.8rem;
+            gap: $spacing-sm;
         }
 
         &__submit {
             min-width: 17rem;
             padding: 0 1.3rem;
-            font-size: 1.4rem;
+            font-size: $size-body-sm;
         }
 
         &__terms-copy,
         &__terms {
-            font-size: 1.2rem;
+            font-size: $size-body-xs;
         }
     }
 }
 
-@media (width <= 375px) {
+@include small {
     .c-solution-content {
-        gap: 1.6rem 0;
+        gap: $spacing-md 0;
     }
 
     .c-secret-offer-modal {
         &__dialog {
-            padding: 2rem 1.2rem 1.6rem;
+            padding: 2rem 1.2rem $spacing-md;
         }
 
         &__header {
@@ -402,7 +385,7 @@ body.is-modal-open {
         }
 
         &__title {
-            font-size: 2rem;
+            font-size: $size-title-sm;
         }
 
         &__subtitle {
@@ -419,7 +402,7 @@ body.is-modal-open {
             select {
                 height: 4.4rem;
                 padding: 0 1.2rem;
-                font-size: 1.4rem;
+                font-size: $size-body-sm;
             }
 
             select {
@@ -431,12 +414,12 @@ body.is-modal-open {
         &__submit,
         &__success-close {
             height: 4.4rem;
-            font-size: 1.4rem;
+            font-size: $size-body-sm;
         }
 
         &__terms,
         &__error {
-            font-size: 1.2rem;
+            font-size: $size-body-xs;
         }
 
         &__success-icon {
@@ -450,7 +433,7 @@ body.is-modal-open {
         }
 
         &__success-text {
-            font-size: 1.4rem;
+            font-size: $size-body-sm;
             line-height: 1.5;
         }
     }

@@ -4,7 +4,7 @@
     position: relative;
     height: 56.9rem;
     overflow: hidden;
-    border-radius: 0.8rem;
+    border-radius: $radius-md;
 
     &__image {
         position: absolute;
@@ -12,7 +12,7 @@
         background-color: var(--c-bg);
         background-position: center;
         background-size: cover;
-        border-radius: 0.8rem;
+        border-radius: $radius-md;
     }
 
     &__overlay {
@@ -24,26 +24,26 @@
             rgb(0 0 0 / 20%) 50%,
             transparent 100%
         );
-        border-radius: 0.8rem;
+        border-radius: $radius-md;
     }
 
     &__content {
         position: relative;
         display: flex;
         flex-direction: column;
-        gap: 3.2rem;
+        gap: $spacing-lg;
         align-items: flex-start;
         justify-content: center;
         height: 100%;
         padding: 12.8rem 9.7rem;
-        color: #fff;
+        color: $color-white;
 
         &__title {
             width: 52rem;
             margin: 0;
-            font-family: "Wix Madefor Display", sans-serif;
-            font-size: 5.2rem;
-            font-weight: 800;
+            font-family: $font-display;
+            font-size: $size-title-lg;
+            font-weight: $weight-extrabold;
             line-height: 1.25;
             overflow-wrap: anywhere;
         }
@@ -51,47 +51,35 @@
         &__description {
             width: 52rem;
             margin: 0;
-            font-family: "DM Sans", sans-serif;
-            font-size: 1.6rem;
-            font-weight: 400;
+            font-family: $font-body;
+            font-size: $size-body;
+            font-weight: $weight-regular;
             line-height: 1.4;
             overflow-wrap: anywhere;
 
             strong {
-                font-weight: 800;
+                font-weight: $weight-extrabold;
             }
         }
 
         &__button {
-            display: flex;
-            gap: 0.8rem;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1.6rem 2rem;
-            color: #fff;
+            @include flex-between;
+
+            gap: $spacing-sm;
+            padding: $spacing-md 2rem;
+            color: $color-white;
             cursor: pointer;
-            background: #dd1969;
+            background: $color-primary;
             border: none;
-            border-radius: 0.4rem;
-            transition: background 0.2s ease;
+            border-radius: $radius-sm;
 
-            &:hover {
-                background: #c01559;
-            }
-
-            &:active {
-                background: #a01249;
-            }
-
-            &:focus-visible {
-                outline: 0.2rem solid #1d5eff;
-                outline-offset: 0.2rem;
-            }
+            @include smooth-transition(background);
+            @include button-states;
 
             .sb-text {
-                font-family: "Wix Madefor Display", sans-serif;
-                font-size: 1.6rem;
-                font-weight: 700;
+                font-family: $font-display;
+                font-size: $size-body;
+                font-weight: $weight-bold;
                 white-space: nowrap;
             }
 
@@ -104,45 +92,43 @@
     }
 }
 
-// Tablet (up to 768px)
-@media (width <= 768px) {
+@include tablet {
     .c-solution-banner {
         height: 40rem;
-        border-radius: 0.4rem;
+        border-radius: $radius-sm;
 
         &__image {
-            border-radius: 0.4rem;
+            border-radius: $radius-sm;
         }
 
         &__overlay {
-            border-radius: 0.4rem;
             background: linear-gradient(
                 90deg,
                 rgb(0 0 0 / 70%) 0%,
                 rgb(0 0 0 / 40%) 50%,
                 rgb(0 0 0 / 10%) 100%
             );
+            border-radius: $radius-sm;
         }
 
         &__content {
-            padding: 6.4rem 4rem;
             gap: 2rem;
+            padding: $spacing-xl 4rem;
 
             &__title {
                 width: 100%;
-                font-size: 2.8rem;
+                font-size: $size-title-md;
             }
 
             &__description {
                 width: 100%;
-                font-size: 1.4rem;
+                font-size: $size-body-sm;
             }
         }
     }
 }
 
-// Mobile (up to 600px)
-@media (width <= 600px) {
+@include mobile {
     .c-solution-banner {
         height: 35rem;
 
@@ -156,34 +142,68 @@
         }
 
         &__content {
-            padding: 4.8rem 2rem;
-            gap: 1.6rem;
+            gap: $spacing-md;
             align-items: stretch;
+            padding: 4.8rem 2rem;
 
             &__title {
                 width: 100%;
-                font-size: 2rem;
+                font-size: $size-title-sm;
                 line-height: 1.3;
             }
 
             &__description {
                 width: 100%;
-                font-size: 1.2rem;
+                font-size: $size-body-xs;
                 line-height: 1.5;
             }
 
             &__button {
-                padding: 1.2rem 1.6rem;
-                width: 100%;
                 justify-content: center;
+                width: 100%;
+                padding: 1.2rem $spacing-md;
 
                 .sb-text {
-                    font-size: 1.4rem;
+                    font-size: $size-body-sm;
                 }
 
                 .sb-icon {
                     width: 1.6rem;
                     height: 1.6rem;
+                }
+            }
+        }
+    }
+}
+
+@include small {
+    .c-solution-banner {
+        height: 28rem;
+
+        &__content {
+            gap: 1.2rem;
+            padding: $spacing-lg 1.2rem;
+
+            &__title {
+                font-size: 1.6rem;
+                line-height: 1.25;
+            }
+
+            &__description {
+                font-size: $size-label;
+                line-height: 1.4;
+            }
+
+            &__button {
+                padding: 1rem 1.2rem;
+
+                .sb-text {
+                    font-size: $size-body-xs;
+                }
+
+                .sb-icon {
+                    width: 1.4rem;
+                    height: 1.4rem;
                 }
             }
         }

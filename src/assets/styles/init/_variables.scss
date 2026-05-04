@@ -1,1 +1,70 @@
-// empty for now
+// Breakpoints
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 600px;
+$breakpoint-small: 375px;
+
+// Colors - Primary
+$color-primary: #dd1969;
+$color-primary-hover: #c01559;
+$color-primary-active: #a01249;
+
+// Colors - Text & Backgrounds
+$color-text: #000;
+$color-text-light: #595959;
+$color-text-lighter: #999;
+$color-bg: #f5f5f5;
+$color-white: #fff;
+
+// Colors - States
+$color-error: #d32f2f;
+$color-success: #388e3c;
+$color-warning: #f57c00;
+
+// Colors - Borders & Dividers
+$color-border: #e0e0e0;
+$color-border-light: #f0f0f0;
+
+// Typography - Fonts
+$font-display: "Wix Madefor Display", sans-serif;
+$font-body: "DM Sans", sans-serif;
+
+// Typography - Font Sizes
+$size-title-lg: 5.2rem;
+$size-title-md: 2.8rem;
+$size-title-sm: 2rem;
+$size-body: 1.6rem;
+$size-body-sm: 1.4rem;
+$size-body-xs: 1.2rem;
+$size-label: 1rem;
+
+// Typography - Font Weights
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+$weight-bold: 700;
+$weight-extrabold: 800;
+
+// Spacing
+$spacing-xs: 0.4rem;
+$spacing-sm: 0.8rem;
+$spacing-md: 1.6rem;
+$spacing-lg: 3.2rem;
+$spacing-xl: 6.4rem;
+$spacing-2xl: 9.6rem;
+
+// Border Radius
+$radius-xs: 0.2rem;
+$radius-sm: 0.4rem;
+$radius-md: 0.8rem;
+$radius-lg: 1.6rem;
+
+// Transitions
+$transition-fast: 0.15s ease;
+$transition-base: 0.2s ease;
+$transition-slow: 0.3s ease;
+
+// Shadows
+$shadow-sm: 0 1px 2px rgb(0 0 0 / 5%);
+$shadow-base: 0 1px 3px rgb(0 0 0 / 10%);
+$shadow-md: 0 4px 6px rgb(0 0 0 / 10%);
+$shadow-lg: 0 10px 15px rgb(0 0 0 / 10%);
