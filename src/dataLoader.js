@@ -50,6 +50,29 @@ const setCachedData = (data) => {
 };
 
 /**
+ * Get fallback data when API is unavailable
+ */
+const getFallbackData = () => {
+    return {
+        banner: {
+            title: "Profesionálne náradie pre každý projekt",
+            description:
+                "Objavte ponuku overených produktov a vyberte si riešenie presne podľa vašich potrieb.",
+            ctaText: "Zobraziť produkty",
+            image: null,
+        },
+        ctaBanner: {
+            title: "Získajte tajnú ponuku",
+            description: "Vyplňte krátky formulár a pripravíme pre vás špeciálnu ponuku na mieru.",
+            ctaText: "Získať tajnú ponuku",
+            image: null,
+        },
+        products: [],
+        categories: [],
+    };
+};
+
+/**
  * Load data from API
  *
  * @returns {Promise<Object>} Data object with banner, ctaBanner, products, categories
@@ -89,7 +112,12 @@ export const loadData = async () => {
         return data;
     } catch (error) {
         console.error("[Data Loader] Failed to load data from API:", error);
-        throw error;
+
+        // Return fallback data instead of throwing error
+        console.warn("[Data Loader] Using fallback data due to API error");
+        const fallbackData = getFallbackData();
+        setCachedData(fallbackData);
+        return fallbackData;
     }
 };
 
