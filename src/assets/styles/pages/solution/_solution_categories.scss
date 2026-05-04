@@ -1,0 +1,323 @@
+@use "./../../init" as *;
+
+.l-solution {
+    &__categories {
+        margin-top: 6.4rem;
+        margin-bottom: 6.4rem;
+    }
+}
+
+.c-solution-categories-wrap {
+    &__title {
+        margin: 0 0 2rem;
+        font-family: "Wix Madefor Display", sans-serif;
+        font-size: 3.8rem;
+        font-weight: 800;
+        line-height: 1.05;
+        color: #101022;
+    }
+}
+
+.c-solution-categories {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-areas:
+        "electric garden garden accessories"
+        "cleaning cleaning manual accessories";
+    gap: 2.4rem;
+}
+
+.c-solution-category {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 35rem;
+    background: #0d0f19;
+    border: 0.1rem solid #232532;
+    border-radius: 0.8rem;
+    box-shadow: 0 1.2rem 3.2rem rgb(6 9 18 / 26%);
+
+    &.is-electric {
+        grid-area: electric;
+    }
+
+    &.is-garden {
+        grid-area: garden;
+
+        .c-solution-category__subcategories {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            min-height: 7.8rem;
+        }
+    }
+
+    &.is-manual {
+        grid-area: manual;
+    }
+
+    &.is-cleaning {
+        grid-area: cleaning;
+
+        .c-solution-category__subcategories {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            min-height: 7.8rem;
+        }
+    }
+
+    &.is-accessories {
+        grid-area: accessories;
+        min-height: 62rem;
+
+        .c-solution-category__subcategories {
+            max-height: none;
+        }
+    }
+
+    &__image-wrap {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: inherit;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &__image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.24s ease;
+    }
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background:
+            linear-gradient(180deg, rgb(8 10 18 / 10%) 0%, rgb(8 10 18 / 58%) 62%, rgb(5 6 12 / 90%) 100%),
+            linear-gradient(95deg, rgb(10 12 20 / 45%) 0%, rgb(10 12 20 / 20%) 46%, rgb(10 12 20 / 52%) 100%);
+    }
+
+    &__content {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        display: grid;
+        gap: 1.1rem;
+        padding: 2.2rem 2.2rem 2rem;
+    }
+
+    &__title {
+        display: inline-flex;
+        gap: 0.8rem;
+        align-items: center;
+        margin: 0;
+    }
+
+    &__title-text {
+        font-family: "Wix Madefor Display", sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1;
+        color: #fff;
+        overflow-wrap: anywhere;
+    }
+
+    &__count {
+        display: inline-grid;
+        place-items: center;
+        min-width: 2.2rem;
+        height: 2.2rem;
+        padding: 0 0.5rem;
+        margin: 0;
+        font-family: "DM Sans", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        line-height: 1;
+        color: #fff;
+        background: #dd1969;
+        border-radius: 999rem;
+    }
+
+    &__subcategories {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.8rem 2.2rem;
+        min-height: 0;
+        max-height: 13.8rem;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        list-style: none;
+    }
+
+    &__subitem {
+        position: relative;
+        padding-left: 1.5rem;
+
+        &::before {
+            position: absolute;
+            top: 0.9rem;
+            left: 0;
+            width: 0.8rem;
+            height: 0.2rem;
+            content: "";
+            background: #dd1969;
+            border-radius: 99rem;
+        }
+    }
+
+    &__sublink {
+        font-family: "DM Sans", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.35;
+        color: rgb(255 255 255 / 92%);
+        text-decoration: none;
+        overflow-wrap: anywhere;
+
+        &:focus-visible {
+            outline: 0.2rem solid #1d5eff;
+            outline-offset: 0.2rem;
+        }
+
+        &.is-disabled {
+            cursor: default;
+            opacity: 0.9;
+            text-decoration: none;
+        }
+    }
+
+    &__cta {
+        margin-top: auto;
+        width: fit-content;
+        font-family: "Wix Madefor Display", sans-serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #fff;
+        text-decoration: underline;
+        text-underline-offset: 0.35rem;
+        overflow-wrap: anywhere;
+
+        &:focus-visible {
+            outline: 0.2rem solid #1d5eff;
+            outline-offset: 0.2rem;
+        }
+
+        &.is-disabled {
+            cursor: default;
+            opacity: 0.9;
+            text-decoration: none;
+        }
+    }
+
+    &:hover {
+        .c-solution-category__image {
+            transform: scale(1.03);
+        }
+
+        .c-solution-category__sublink:not(.is-disabled),
+        .c-solution-category__cta:not(.is-disabled) {
+            text-decoration: underline;
+        }
+    }
+}
+
+@media (width <= 1200px) {
+    .c-solution-categories-wrap {
+        &__title {
+            font-size: 3.2rem;
+        }
+    }
+
+    .c-solution-categories {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "electric garden"
+            "cleaning manual"
+            "accessories accessories";
+    }
+
+    .c-solution-category {
+        min-height: 28.8rem;
+
+        &.is-accessories {
+            min-height: 33rem;
+
+            .c-solution-category__image-wrap {
+                aspect-ratio: 16 / 7;
+            }
+        }
+
+        &__title-text {
+            font-size: 2.2rem;
+        }
+
+        &__sublink,
+        &__cta {
+            font-size: 1.5rem;
+        }
+
+        &__subcategories {
+            gap: 0.6rem 1.4rem;
+        }
+    }
+}
+
+@media (width <= 768px) {
+    .l-solution {
+        &__categories {
+            margin-top: 4.8rem;
+            margin-bottom: 4.8rem;
+        }
+    }
+
+    .c-solution-categories {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "electric"
+            "garden"
+            "cleaning"
+            "manual"
+            "accessories";
+        gap: 1.6rem;
+    }
+
+    .c-solution-category {
+        min-height: 28rem;
+
+        &.is-accessories {
+            min-height: 28rem;
+
+            .c-solution-category__image-wrap {
+                aspect-ratio: auto;
+            }
+
+            .c-solution-category__subcategories {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        &__title-text {
+            font-size: 1.9rem;
+        }
+
+        &__sublink,
+        &__cta {
+            font-size: 1.4rem;
+        }
+
+        &__subcategories {
+            grid-template-columns: 1fr;
+            max-height: none;
+        }
+
+        &__content {
+            padding: 1.8rem 1.6rem 1.6rem;
+        }
+    }
+}

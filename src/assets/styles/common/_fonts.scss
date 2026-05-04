@@ -1,1 +1,150 @@
 @use "./../init" as *;
+
+@font-face {
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../fonts/dm-sans/dm-sans-latin-400-normal.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../../fonts/dm-sans/dm-sans-latin-500-normal.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../../fonts/dm-sans/dm-sans-latin-700-normal.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM Sans";
+    font-style: italic;
+    font-weight: 400;
+    src: url("../../fonts/dm-sans/dm-sans-latin-400-italic.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../fonts/dm-sans/dm-sans-latin-ext-400-normal.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../../fonts/dm-sans/dm-sans-latin-ext-500-normal.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../../fonts/dm-sans/dm-sans-latin-ext-700-normal.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM Sans";
+    font-style: italic;
+    font-weight: 400;
+    src: url("../../fonts/dm-sans/dm-sans-latin-ext-400-italic.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Wix Madefor Display";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../fonts/wix-madefor-display/wix-madefor-display-latin-400-normal.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Wix Madefor Display";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../../fonts/wix-madefor-display/wix-madefor-display-latin-500-normal.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Wix Madefor Display";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../../fonts/wix-madefor-display/wix-madefor-display-latin-600-normal.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Wix Madefor Display";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../../fonts/wix-madefor-display/wix-madefor-display-latin-700-normal.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Wix Madefor Display";
+    font-style: normal;
+    font-weight: 800;
+    src: url("../../fonts/wix-madefor-display/wix-madefor-display-latin-800-normal.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Wix Madefor Display";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../fonts/wix-madefor-display/wix-madefor-display-latin-ext-400-normal.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Wix Madefor Display";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../../fonts/wix-madefor-display/wix-madefor-display-latin-ext-500-normal.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Wix Madefor Display";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../../fonts/wix-madefor-display/wix-madefor-display-latin-ext-600-normal.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Wix Madefor Display";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../../fonts/wix-madefor-display/wix-madefor-display-latin-ext-700-normal.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Wix Madefor Display";
+    font-style: normal;
+    font-weight: 800;
+    src: url("../../fonts/wix-madefor-display/wix-madefor-display-latin-ext-800-normal.woff2") format("woff2");
+    font-display: swap;
+}
+
+
+
+
+

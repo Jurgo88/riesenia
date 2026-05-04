@@ -45,6 +45,7 @@
             font-size: 5.2rem;
             font-weight: 800;
             line-height: 1.25;
+            overflow-wrap: anywhere;
         }
 
         &__description {
@@ -54,6 +55,7 @@
             font-size: 1.6rem;
             font-weight: 400;
             line-height: 1.4;
+            overflow-wrap: anywhere;
 
             strong {
                 font-weight: 800;
@@ -81,6 +83,11 @@
                 background: #a01249;
             }
 
+            &:focus-visible {
+                outline: 0.2rem solid #1d5eff;
+                outline-offset: 0.2rem;
+            }
+
             .sb-text {
                 font-family: "Wix Madefor Display", sans-serif;
                 font-size: 1.6rem;
@@ -92,6 +99,92 @@
                 flex-shrink: 0;
                 width: 2rem;
                 height: 2rem;
+            }
+        }
+    }
+}
+
+// Tablet (up to 768px)
+@media (width <= 768px) {
+    .c-solution-banner {
+        height: 40rem;
+        border-radius: 0.4rem;
+
+        &__image {
+            border-radius: 0.4rem;
+        }
+
+        &__overlay {
+            border-radius: 0.4rem;
+            background: linear-gradient(
+                90deg,
+                rgb(0 0 0 / 70%) 0%,
+                rgb(0 0 0 / 40%) 50%,
+                rgb(0 0 0 / 10%) 100%
+            );
+        }
+
+        &__content {
+            padding: 6.4rem 4rem;
+            gap: 2rem;
+
+            &__title {
+                width: 100%;
+                font-size: 2.8rem;
+            }
+
+            &__description {
+                width: 100%;
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+
+// Mobile (up to 600px)
+@media (width <= 600px) {
+    .c-solution-banner {
+        height: 35rem;
+
+        &__overlay {
+            background: linear-gradient(
+                90deg,
+                rgb(0 0 0 / 75%) 0%,
+                rgb(0 0 0 / 45%) 50%,
+                rgb(0 0 0 / 15%) 100%
+            );
+        }
+
+        &__content {
+            padding: 4.8rem 2rem;
+            gap: 1.6rem;
+            align-items: stretch;
+
+            &__title {
+                width: 100%;
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+
+            &__description {
+                width: 100%;
+                font-size: 1.2rem;
+                line-height: 1.5;
+            }
+
+            &__button {
+                padding: 1.2rem 1.6rem;
+                width: 100%;
+                justify-content: center;
+
+                .sb-text {
+                    font-size: 1.4rem;
+                }
+
+                .sb-icon {
+                    width: 1.6rem;
+                    height: 1.6rem;
+                }
             }
         }
     }

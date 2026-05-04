@@ -2,9 +2,19 @@
 
 @use "./solution_banner";
 @use "./solution_content";
+@use "./solution_products";
+@use "./solution_categories";
 
 .l-solution {
     &__banner {
         margin-bottom: 10rem;
+    }
+}
+
+@media (width <= 375px) {
+    .l-solution {
+        &__banner {
+            margin-bottom: 4.8rem;
+        }
     }
 }
